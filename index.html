@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%A7%A0</text></svg>">
+<title>Majd Hawily — Psychological Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1F2A36;
+    --ink-soft: #5B5D53;
+    --paper: #F2F2EC;
+    --surface: #FFFFFF;
+    --gold: #8C6B2C;
+    --teal: #265149;
+    --rule: #D9D6CA;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ECEAE1;
+      --ink-soft: #ACAA9E;
+      --paper: #14171A;
+      --surface: #1B1F21;
+      --gold: #D2A059;
+      --teal: #62A699;
+      --rule: #32352F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #ECEAE1;
+    --ink-soft: #ACAA9E;
+    --paper: #14171A;
+    --surface: #1B1F21;
+    --gold: #D2A059;
+    --teal: #62A699;
+    --rule: #32352F;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.75rem;
+  }
+  .measure {
+    max-width: 640px;
+  }
+
+  /* ---------- Header ---------- */
+  header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  nav.site-nav {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+  }
+  nav.site-nav a {
+    text-decoration: none;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  nav.site-nav a:hover { color: var(--teal); border-color: var(--teal); }
+
+  section { scroll-margin-top: 4.5rem; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: 4.5rem 0 3.5rem;
+  }
+  .hero .kicker {
+    font-size: 0.95rem;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+  }
+  .hero p.bio {
+    margin-top: 1.4rem;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  /* ---------- Testimonials ---------- */
+  .testimonials {
+    padding: 3rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 3rem;
+    margin-top: 2rem;
+  }
+  blockquote.testimonial {
+    margin: 0;
+    padding-left: 1.1rem;
+    border-left: 2px solid var(--gold);
+  }
+  blockquote.testimonial p {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  blockquote.testimonial footer {
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+  blockquote.testimonial footer .name { color: var(--teal); font-weight: 600; }
+
+  /* ---------- Resume ---------- */
+  .resume { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  .resume h2, .portfolio h2, .contact h2 { font-size: 1.8rem; margin-bottom: 2rem; }
+
+  .education-item {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 1.25rem;
+    padding-bottom: 1.75rem;
+  }
+  .education-item .school {
+    font-size: 0.85rem;
+    color: var(--teal);
+    font-weight: 600;
+  }
+  .education-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+  }
+  .education-item p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .education-item a { color: var(--teal); text-decoration: underline; }
+
+  h3.subhead {
+    font-size: 0.85rem;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    color: var(--ink-soft);
+    text-transform: none;
+    margin: 2.5rem 0 0.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .timeline { margin-top: 1.5rem; }
+  .timeline-entry {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    column-gap: 1.25rem;
+    padding-bottom: 2.5rem;
+  }
+  .timeline-entry .marker { position: relative; }
+  .timeline-entry .marker::before {
+    content: "";
+    position: absolute;
+    left: 50%; top: 0.45rem;
+    transform: translateX(-50%);
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+  .timeline-entry .marker::after {
+    content: "";
+    position: absolute;
+    left: 50%; top: 0.45rem;
+    transform: translateX(-50%);
+    width: 1px;
+    height: calc(100% + 2.5rem - 0.45rem);
+    background: var(--rule);
+  }
+  .timeline-entry:last-child .marker::after { display: none; }
+  .entry-date {
+    font-size: 0.8rem;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .entry-role {
+    font-size: 1.2rem;
+    margin-bottom: 0.15rem;
+  }
+  .entry-org {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-bottom: 0.65rem;
+  }
+  .entry-bullets {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--ink);
+  }
+  .entry-bullets li { margin-bottom: 0.4rem; line-height: 1.55; font-size: 0.96rem; }
+
+  /* ---------- Portfolio ---------- */
+  .portfolio { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.2rem;
+  }
+  .filters button {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 2px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .filters button:hover { border-color: var(--teal); color: var(--teal); }
+  .filters button[aria-pressed="true"] {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: var(--surface);
+  }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  a.portfolio-item {
+    display: block;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid var(--rule);
+    border-left: 2px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--surface);
+    transition: border-color 0.15s ease;
+  }
+  a.portfolio-item:hover { border-left-color: var(--gold); border-color: var(--gold); }
+  .portfolio-tag {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .portfolio-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.35;
+  }
+  .portfolio-link-label {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  .portfolio-item.is-hidden { display: none; }
+  .back-to-top {
+    display: inline-block;
+    margin-top: 2.2rem;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .back-to-top:hover { color: var(--teal); border-color: var(--teal); }
+
+  /* ---------- Contact ---------- */
+  .contact { padding: 4rem 0 5rem; border-top: 1px solid var(--rule); }
+  .contact p { color: var(--ink-soft); margin: 0.8rem 0 1.6rem; }
+  .contact-link {
+    display: inline-block;
+    padding: 0.65rem 1.3rem;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--ink);
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .contact-link:hover { background: var(--ink); color: var(--paper); }
+
+  footer.site-footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.75rem 0;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 720px) {
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .education-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    nav.site-nav { gap: 1rem; }
+    .hero { padding-top: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">Majd Hawily</a>
+    <nav class="site-nav" aria-label="Section navigation">
+      <a href="#about-me">About Me</a>
+      <a href="#resume">Resume</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section id="about-me" class="hero wrap">
+    <div class="kicker">Psychological Researcher, MSc</div>
+    <h1>Majd Hawily</h1>
+    <p class="bio measure">Majd is a researcher specializing in cross-cultural psychology and mental health among newcomer, immigrant, and Indigenous communities. She designs mixed-methods studies — statistical modeling in R and SPSS alongside qualitative analysis in NVivo — that measure the real-world impact of educational and support programs, turning complex psychological questions into evidence that research teams and therapeutic organizations can put into practice.</p>
+  </section>
+
+  <section class="testimonials wrap">
+    <h2>Testimonials</h2>
+    <div class="testimonial-grid">
+      <blockquote class="testimonial">
+        <p>“Majd worked very hard and accomplished a great deal&nbsp;&hellip; Particularly impressive was her development of skills with R for statistical analyses including multi-level models.”</p>
+        <footer><span class="name">Dr. Steve Lindsay</span> — University of Victoria</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>“Throughout our collaboration, Majd consistently impressed me with her responsible and mature approach to work. Her technical skills are unquestionable.”</p>
+        <footer><span class="name">Dr. Reem Mouawad</span> — Step Together Association</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>“She took the initiative in developing projects that expanded her programming skills and applied cognitive modeling concepts. Job well done.”</p>
+        <footer><span class="name">Dr. Adam Krawitz</span> — University of Victoria</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>“Majd&rsquo;s ebullience, fluid intelligence, and maturity make her stand out. She has a unique leadership persona and communicates assertively.”</p>
+        <footer><span class="name">Ms. Ryma Hady</span> — Psychotherapist</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>“Majd asked interesting and in-depth questions&nbsp;&hellip; She approached every task with great enthusiasm and effort. I am quite impressed.”</p>
+        <footer><span class="name">Dr. Dany Sharabaty</span> — Expressions Intl.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="resume" class="resume wrap">
+    <h2>Resume</h2>
+
+    <h3 class="subhead" style="border-top:none; padding-top:0; margin-top:0;">Education</h3>
+    <div class="education-item">
+      <div class="school">University of Victoria</div>
+      <div>
+        <h3>Master&rsquo;s Degree in Psychology (Cognition and Brain Sciences)</h3>
+        <p>During my graduate studies, I specialized in Cognitive and Brain Sciences at University of Victoria. I submitted my <a href="files/Hawily_MajdZ_MSc_2023.pdf" target="_blank" rel="noopener">thesis</a> on cross-cultural recognition memory under the supervision of Dr Steve Lindsay.</p>
+      </div>
+    </div>
+    <div class="education-item">
+      <div class="school">Lebanese American University</div>
+      <div>
+        <h3>Bachelor of Arts in Psychology</h3>
+        <p>While undergoing undergraduate studies, I focused on learning the fields of educational psychology and special education. I submitted my <a href="files/Hawily-Senior-Study-2020.docx" target="_blank" rel="noopener">thesis</a> on parenting and attachment under the supervision of Dr Rudy Abi Habib.</p>
+      </div>
+    </div>
+
+    <h3 class="subhead">Experience</h3>
+    <div class="timeline">
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Jan 2026 – Present</div>
+          <h3 class="entry-role">Researcher</h3>
+          <div class="entry-org">University of Victoria — Department of Health</div>
+          <ul class="entry-bullets">
+            <li>Supporting a project led by REACH Community Health Centre in collaboration with UVic&rsquo;s Department of Health (Dr Nancy Clark). The project targets populations facing primary care access barriers (such as Indigenous and newcomer communities), executing a mixed-methods design including quantitative survey analysis and qualitative key informant interviews.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Feb 2024 – Apr 2025</div>
+          <h3 class="entry-role">Research and Evaluation Analyst</h3>
+          <div class="entry-org">ACS – Metropolis</div>
+          <ul class="entry-bullets">
+            <li>Conducted evaluations of newcomer-inclusion tools to analyze their validity for use with diverse, vulnerable populations.</li>
+            <li>Managed research interns and designed training materials emphasizing mixed-methods analysis, strengthening the team&rsquo;s capacity to integrate qualitative narratives with quantitative data.</li>
+            <li>Delivered three conference presentations on crucial topics, including immigrant psychosocial experience and inclusion measurement, translating complex research into actionable knowledge for practitioners and policymakers.</li>
+            <li>Co-developed the BC Immigrant Labour Profile using StatsCan datasets, demonstrating competence in managing and analyzing large-scale population data relevant to the social determinants of health and mental well-being.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Aug 2024 – Oct 2024</div>
+          <h3 class="entry-role">Design Researcher</h3>
+          <div class="entry-org">Normative</div>
+          <ul class="entry-bullets">
+            <li>Managed the qualitative analysis strategy (using NVivo) of complex psychological health-related transcripts collected from multiple international sites, ensuring methodological rigor in sensitive cross-cultural data.</li>
+            <li>Translated complex thematic findings into the conceptual foundation for a non-pharmacological behavioral health initiative, serving as the critical link between qualitative research and strategic program development for vulnerable populations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Oct 2023 – Aug 2024</div>
+          <h3 class="entry-role">Researcher</h3>
+          <div class="entry-org">Independent Research Collaboration — Concordia University</div>
+          <ul class="entry-bullets">
+            <li>Designed and programmed a full-scale Qualtrics experiment to rigorously test human perception, trust, and credibility when exposed to AI- vs. human-generated content.</li>
+            <li>Executed quantitative analysis for over 350 participants, applying advanced methods including regression modeling (using R and SPSS) to derive reliable psychological findings.</li>
+            <li>Contributed significantly to report writing and scientific synthesis of human-perception findings, ensuring accurate dissemination of results relevant to human-computer interaction.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Sep 2021 – Jan 2024</div>
+          <h3 class="entry-role">Researcher</h3>
+          <div class="entry-org">University of Victoria — Department of Psychology</div>
+          <ul class="entry-bullets">
+            <li>Co-authored a manuscript on cross-cultural response bias and memory, demonstrating mastery of the full research lifecycle from data collection to scientific writing and submission.</li>
+            <li>Applied advanced statistical modeling (e.g., multilevel modeling, Signal Detection Theory) to analyze large-scale, cross-cultural datasets, ensuring psychometric rigor in complex cognitive research.</li>
+            <li>Secured research funding while delivering six professional talks (e.g., CSBBCS, NOWCAM) to diverse scientific audiences, proving the ability to successfully communicate and defend research proposals.</li>
+            <li>Managed concurrent research projects and mentored (as a lab instructor and teaching assistant) undergraduate students in advanced statistical analysis (R programming) and contributed to clinical projects.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Jul 2019 – Aug 2021</div>
+          <h3 class="entry-role">Associate Project Manager</h3>
+          <div class="entry-org">Step Together Association</div>
+          <ul class="entry-bullets">
+            <li>Designed and implemented psychoeducational training curricula for 40+ teachers by integrating evidence-based behavioral principles and therapeutic approaches, enhancing community capacity for special needs support.</li>
+            <li>Assisted in the successful launch and leadership of the Family Support Unit, applying therapeutically scientific interventions and delivering parental guidance sessions to families with children who have special needs.</li>
+            <li>Coordinated strategic planning across seven organizational units, ensuring all interventions were driven by measurable outcomes, leading to effective program implementation.</li>
+            <li>Managed a team of volunteers to develop and deploy customized visual and behavioral support tools, enhancing the learning and therapeutic environment for over 250 students with special needs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Aug 2018 – Jul 2021</div>
+          <h3 class="entry-role">Research Assistant</h3>
+          <div class="entry-org">Lebanese American University</div>
+          <ul class="entry-bullets">
+            <li>Contributed to the psychometric validation of the Battery Health Indicator and conducted extensive literature reviews on trauma and post-disaster mental health following the Beirut explosion.</li>
+            <li>Executed quantitative analyses and managed data governance for large-scale studies involving 1,000+ participants, contributing to the publication of findings in recognized journals.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Feb 2021 – Mar 2021</div>
+          <h3 class="entry-role">Project Manager (Trainee)</h3>
+          <div class="entry-org">Schemazone — Reach Academy</div>
+          <ul class="entry-bullets">
+            <li>Applied structured project management methodologies (such as Work Breakdown Structure) to define and manage complex projects.</li>
+            <li>Focused on achieving high adherence to project timelines by utilizing structured planning and business frameworks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Apr 2020 – Dec 2020</div>
+          <h3 class="entry-role">Mindful Parenting Prototype</h3>
+          <div class="entry-org">UNDP Youth Leadership Program 6</div>
+          <ul class="entry-bullets">
+            <li>Conceptualized and designed a mindfulness-based parenting intervention prototype targeting secure parent-child attachment and relationship patterns, emphasizing preventative mental health strategies.</li>
+            <li>Focused the program design on high-need contexts, specifically addressing special-needs populations and aiming to translate established psychological theory (attachment and mindfulness) into practical, community-level support.</li>
+            <li>Developed a complete prototype for external funding pitch, successfully translating core components of the curriculum into practice within the Step Together Association&rsquo;s operational Family Support Unit.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Jan 2020 – Apr 2020</div>
+          <h3 class="entry-role">Clinical Assistant</h3>
+          <div class="entry-org">Father Andeweg Institute for the Deaf</div>
+          <ul class="entry-bullets">
+            <li>Supported psycho-educational work with children with hearing impairments, assisting in behaviour support, communication accommodation, and learning-activity facilitation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">May 2019 – Jul 2019</div>
+          <h3 class="entry-role">People Operations Assistant</h3>
+          <div class="entry-org">Makhzoumi Foundation</div>
+          <ul class="entry-bullets">
+            <li>Managed database structuring for HR personnel files and facilitated large-scale recruitment processes.</li>
+            <li>Optimized applicant screening workflows, improving recruitment efficiency.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Dec 2018 – May 2019</div>
+          <h3 class="entry-role">Research Data Analyst</h3>
+          <div class="entry-org">Beeatoona NGO</div>
+          <ul class="entry-bullets">
+            <li>Led data collection, analysis, and reporting for two environmental feasibility studies to inform national sustainability initiatives.</li>
+            <li>Coordinated the launch of eco-friendly programs based on research findings to improve regional sustainability standards.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Aug 2018 – Dec 2018</div>
+          <h3 class="entry-role">Educational Assistant</h3>
+          <div class="entry-org">LAU Early Childhood Center</div>
+          <ul class="entry-bullets">
+            <li>Conducted systematic behavioral observations and small-group engagement for early-childhood learners.</li>
+            <li>Supported developmental skill-scaffolding and tracked progress within a structured educational setting.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Aug 2017 – Dec 2017</div>
+          <h3 class="entry-role">Teaching &amp; Diagnostic Assistant</h3>
+          <div class="entry-org">LAU Department of Education</div>
+          <ul class="entry-bullets">
+            <li>Performed behavioral-diagnostic observations for students with learning concerns under the mentorship of Dr. Ahmad Oueini.</li>
+            <li>Assisted in the assessment and marking process, gaining exposure to educational diagnostic frameworks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-entry">
+        <div class="marker"></div>
+        <div>
+          <div class="entry-date">Jun 2017 – Dec 2017</div>
+          <h3 class="entry-role">Administrative &amp; Educational Assistant</h3>
+          <div class="entry-org">Pass-Port Education</div>
+          <ul class="entry-bullets">
+            <li>Shadowed diagnostic processes and assisted in the organization of individualized learning plans for students.</li>
+            <li>Managed student files and cross-office coordination to support the preparation of clinical and educational reports.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio wrap">
+    <h2>Portfolio</h2>
+    <div class="filters" role="group" aria-label="Filter portfolio by category">
+      <button type="button" aria-pressed="true" data-filter="All">All</button>
+      <button type="button" aria-pressed="false" data-filter="Computational Modeling">Computational Modeling</button>
+      <button type="button" aria-pressed="false" data-filter="Psychometrics & Quantitative Research">Psychometrics &amp; Quantitative Research</button>
+      <button type="button" aria-pressed="false" data-filter="Research Operations & Evaluation">Research Operations &amp; Evaluation</button>
+      <button type="button" aria-pressed="false" data-filter="Pedagogy & Statistics Instruction">Pedagogy &amp; Statistics Instruction</button>
+      <button type="button" aria-pressed="false" data-filter="Clinical & Behavioral Intervention">Clinical &amp; Behavioral Intervention</button>
+    </div>
+    <div class="portfolio-grid">
+
+      <a class="portfolio-item" data-category="Psychometrics & Quantitative Research" href="files/Feasibility-Study-Beeatoona-NGO.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Psychometrics &amp; Quantitative Research</span>
+        <h3 class="portfolio-title">Feasibility Study — Beeatoona NGO</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Psychometrics & Quantitative Research" href="files/Co-witness-Conformity-Project-University-of-Victoria-1.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Psychometrics &amp; Quantitative Research</span>
+        <h3 class="portfolio-title">Co-witness Conformity Project — UVic</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Psychometrics & Quantitative Research" href="files/Undergraduate-Research-Projects-LAU.png" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Psychometrics &amp; Quantitative Research</span>
+        <h3 class="portfolio-title">Undergraduate Research Projects — LAU</h3>
+        <span class="portfolio-link-label">View PNG</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Psychometrics & Quantitative Research" href="files/Neurofeedback-EEG-Study-University-of-Victoria.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Psychometrics &amp; Quantitative Research</span>
+        <h3 class="portfolio-title">Neurofeedback (EEG) Study — UVic</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Psychometrics & Quantitative Research" href="files/Undergraduate-Thesis-Poster-Lebanese-American-University.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Psychometrics &amp; Quantitative Research</span>
+        <h3 class="portfolio-title">Undergraduate Thesis Poster — LAU</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Computational Modeling" href="files/Machine-Learning-Case-Study-University-of-Victoria.pptx" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Computational Modeling</span>
+        <h3 class="portfolio-title">Machine Learning Case Study — UVic</h3>
+        <span class="portfolio-link-label">View PPTX</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Computational Modeling" href="files/Neural-Network-MLP-Study-University-of-Victoria.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Computational Modeling</span>
+        <h3 class="portfolio-title">Neural Network (MLP) Study — UVic</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Computational Modeling" href="files/Predicting-Users-Purchasing-Intentions-using-ML-PSY-504-University-of-Victoria.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Computational Modeling</span>
+        <h3 class="portfolio-title">Purchasing Intentions (ML) — UVic</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Clinical & Behavioral Intervention" href="files/Normative-work-experience.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Clinical &amp; Behavioral Intervention</span>
+        <h3 class="portfolio-title">Transforming Care for Women with Rare Diseases — Normative</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Clinical & Behavioral Intervention" href="files/Community-Together-Program-Step-Together-Association.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Clinical &amp; Behavioral Intervention</span>
+        <h3 class="portfolio-title">Community Together — Step Together</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Clinical & Behavioral Intervention" href="files/Family-Support-Unit-Step-Together-Association.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Clinical &amp; Behavioral Intervention</span>
+        <h3 class="portfolio-title">Family Support Unit — Step Together</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Clinical & Behavioral Intervention" href="files/Youth-Leadership-Program-UNDP.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Clinical &amp; Behavioral Intervention</span>
+        <h3 class="portfolio-title">Youth Leadership Program — UNDP</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Research Operations & Evaluation" href="files/Human-Resources-Intenrship-Makhzoumi-Foundation.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Research Operations &amp; Evaluation</span>
+        <h3 class="portfolio-title">HR Internship — Makhzoumi Foundation</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Research Operations & Evaluation" href="files/Departmental-Evaluation-Step-Together-Association.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Research Operations &amp; Evaluation</span>
+        <h3 class="portfolio-title">Departmental Evaluation — Step Together</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Research Operations & Evaluation" href="files/Project-Management-Program-Schemazone.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Research Operations &amp; Evaluation</span>
+        <h3 class="portfolio-title">Project Management Program — Schemazone</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Pedagogy & Statistics Instruction" href="files/Teaching-Statistical-Analysis-University-of-Victoria.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Pedagogy &amp; Statistics Instruction</span>
+        <h3 class="portfolio-title">Teaching Statistical Analysis — UVic</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+      <a class="portfolio-item" data-category="Pedagogy & Statistics Instruction" href="files/Teaching-Experiences-Statistics-and-Math.pdf" target="_blank" rel="noopener">
+        <span class="portfolio-tag">Pedagogy &amp; Statistics Instruction</span>
+        <h3 class="portfolio-title">Teaching Experiences (Stats/Math)</h3>
+        <span class="portfolio-link-label">View PDF</span>
+      </a>
+
+    </div>
+    <a class="back-to-top" href="#top">Back to top</a>
+  </section>
+
+  <section id="contact" class="contact wrap">
+    <h2>Get in Touch</h2>
+    <p class="measure">The easiest way to reach Majd is through LinkedIn.</p>
+    <a class="contact-link" href="https://ca.linkedin.com/in/majdhawily" target="_blank" rel="noopener">Connect on LinkedIn</a>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Majd Hawily — Psychological Researcher</div>
+</footer>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.filters button');
+    var items = document.querySelectorAll('.portfolio-item');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        var filter = btn.getAttribute('data-filter');
+        items.forEach(function (item) {
+          var match = filter === 'All' || item.getAttribute('data-category') === filter;
+          item.classList.toggle('is-hidden', !match);
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
